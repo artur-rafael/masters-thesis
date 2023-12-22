@@ -1,0 +1,64 @@
+% #############################################################################
+% Chapter 1 - Introduction
+% !TEX root = ../main.tex
+% #############################################################################
+
+%\fancychapter{Introduction}
+\newfancychapter{Introduction}{ %
+This chapter serves as an introduction to the objective of this work, providing insight into the motivation behind the development of an interface for magnetoresistive sensors. The magnetoresistive sensor technology offers unique advantages and potential applications, and this work aims to explore and leverage its capabilities. The core contribution of this work is the design and implementation of an interface specifically tailored for magnetoresistive sensors. The interface will facilitate accurate and reliable measurement of the sensor outputs, ensuring optimal performance and compatibility with existing measurement systems. Special attention will be given to signal conditioning, noise reduction, and data acquisition techniques to enhance the overall quality and reliability of the measurements. The main contributions of this work are also highlighted and the document structure is
+explained.
+}
+\label{chapter:introduction}
+
+% Uncomment before printing
+\clearpage
+%\thispagestyle{empty}
+%\cleardoublepage
+
+% #############################################################################
+\section{Motivation}
+\label{section:intro-motivation}
+
+The motivation and incentives, along with a historical context, have influenced the embrace of all the challenges that may lie in this dissertation project. Cancer is one of the world’s biggest health problems. It begins when a cell breaks free from the typical restraints on uncontrolled growth and cellular division, which can invade adjacent tissues or organs at a distance. The fast spread of these cells tends to be very aggressive, causing tumors that can propagate to other body regions. Cancer is not just one disease; it is a broad term. It is a group name for more than a hundred and counting diseases, and almost all patients who have cancer develop metastases and die. Therefore, it remains a major unsolved health problem, with conventional cancer treatments having little impact on the disease course \cite{Li2004}. However, early detection can dramatically improve survival rates and reduce treatment costs by 70\%. The effect of new treatments for cancer on mortality has been largely disappointing. The most promising approach to control cancer is a national commitment to prevention, with a concomitant rebalancing of the focus and funding of research \cite{CancerUndefeated}. The battle against cancer is far from over.
+
+Since the beginning of time, the medical science field, responsible for improving health, treating diseases, and understanding biological functions in humans and animals, had to be in constant development to face the needs of the many. Innovation and medicine have gone hand and hand for a long time. This progress provided the means that allowed Mankind to survive for this long. Proven by the vast and far from over list of known epidemics and pandemics that humans have lived throughout. For example, beginning in 1720, an outbreak of bubonic plague in Marseille, France (known as The Great Plague of Marseille) killed an estimated 100 million people in that city and surrounding provinces and towns. In 1817 the first cholera pandemic recorded in modern history spread from India to Southeast Asia, the Middle East, Europe, and Eastern Africa. The "Spanish flu" influenza in 1918 killed upwards of 50 million people worldwide. And nowadays, declared officially as a pandemic in 2020 \cite{cdc_covid}, the Coronavirus disease outbreak, which is still taking casualties, brought us one overwhelming realization of how fragile life is. As the dates imply, around every 100 years, there is a new pandemic that the world must face. Although the disease that this project aims to prevent, cancer, is not transmissible directly from one person to another and doesn't have a direct relationship with the mentioned ones, the concept being conveyed is that the medical field must be in constant evolution. The genetic basis of cancer, recognized in 1902, with a death toll of 9.6 million in 2012 \cite{cancer_statistics}, still doesn't have a cure. Hence, this field has extreme importance and interest concurrently and has my devotion and support.
+
+Furthermore, just like any other scientist, researcher, engineer, or medic that came before or shall come later to improve what began in prior generations. Curiosity, the sense of wonderment that comes from discovery, the act of learning, and deep understanding were the main reasons that motivated me to pick up on this project.
+% https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3RpB5HUAAAAJ&sortby=pubdate&citation_for_view=3RpB5HUAAAAJ:roLk4NBRz8UC
+
+% #############################################################################
+\section{Purpose and Objectives}
+\label{section:intro-objectives}
+
+The following section discloses the purpose and the objective of this master thesis developed at \ac{INESC}. Since the discovery of microorganisms, cell counting techniques induced a great impact on biological sciences \cite{JoseC_thesis}, including medical diagnosis and treatment. The future of medical diagnostics is detecting the presence of one or more biomarkers through a molecular test. Currently, these molecular tests are accomplished through optical means. However, with recent advances in micro and nanotechnologies, which have enabled new transducers with the same size scale as biomolecules, it is now possible to use electronics to perform this test \cite{PMID24761029}. To this end, novel biosensing platforms are imperative to make this transition possible. The work accomplished in this dissertation will assist with the development of a system whose purpose is to detect circulating tumour cells responsible for tumour metastasis. The system has a unique combination of microfluidics, magnetic sensors and microelectronics for early cancer detection.
+
+The objective of the work presented in this dissertation is to improve the analog front-end that interfaces the sensors of a previously developed magnetic cytometer. This analog interface contains all the electronic components required to bias the sensors, establishing the necessary electrical condition for the sensor to produce a signal, and all the electronic components used to amplify and filter the signal before the digitalization. This dissertation aims to address the limitations of the previous magnetic cytometer platform while introducing novel features to facilitate further studies in the field. A key aspect of this endeavor is ensuring a high \ac{SNR}, as any noise generated by the circuit can affect the accuracy and reliability of the output. It is crucial to carefully manage the noise level so that it does not overshadow the desired signal response from the sensors. Special attention will be given to minimizing noise sources, optimizing debugging techniques, and implementing effective noise reduction strategies. By prioritizing the maintenance of a favorable \ac{SNR}, this new platform will enable enhanced sensitivity and improved performance for magnetic field detection and measurement. The noise generated by this discrete electronic circuit should be less or equal to the noise produced by the sensors without compromising the maximum gain and bandwidth necessary for the early cancer detection application. In addition, increasing the number of sensors and the microfluidic channels that contain the sensors is also an objective. Afterwards, a \ac{PCB} designed, assembled and tested will be included in a magnetic flow cytometer prototype system, tailored by several dissertations concurrently to this. With a successful system assembly, the interface is tested by validating the detection of different sized magnetic particles. Hereupon, an article describing the results with the collaboration of all the colleagues involved is published.
+
+All the circuits presented in this work have been meticulously designed either by myself or by research teams affiliated with \ac{INESC-ID}. The magnetic sensors utilized in the cytometer system were developed by separate teams working at \ac{INESC-MN} and the \ac{INL}. The collaboration and expertise of these teams have been instrumental in creating robust and cutting-edge circuitry and sensor technology for this project. This collective effort ensures that the resulting platform integrates state-of-the-art work and provides reliable and accurate performance for magnetic field analysis in the cytometer system.
+
+% #############################################################################
+\section{Document Organization}
+\label{section:intro-document}
+
+The document, composed of five distinct chapters, aims to demonstrate the research and work performed in the scope of an ultra-low signal analog electronic interface for early cancer detection. The subsequent paragraphs provide a summary of each chapter.
+
+\noindent
+\textbullet \, Chapter \ref{chapter:introduction} presents the developed project. It covers the motivation to embrace the project challenges (Section \ref{section:intro-motivation}), the purpose and objectives associated with it (Section \ref{section:intro-objectives}), and the structure of this dissertation document (Section \ref{section:intro-document}).
+
+\noindent
+\textbullet \, Chapter \ref{chapter:state-of-the-art} contains the state of the art that provides valuable information about the sensors used in this work (Section \ref{section:soa-mr-sensors}) and an overview of systems developed inside and outside \ac{INESC} to interface those sensors (Section \ref{section:soa-interfaces}).
+
+\noindent
+\textbullet \, Chapter \ref{chapter:mfc} addresses the application project describing the current technology (Section \ref{section:mfc-fc}) used for similar applications and the working principle of the new technology (Section \ref{section:mfc-principle}) developed to mitigate the old associated issues. This chapter also presents the system architecture (Section \ref{section:mfc-system}), explaining how it operates and the ambitions of the \ac{INESC} research team, emphasizing the development of a front-end interface with key specifications (Section \ref{section:mfc-specifications}) in the ambit of this work.
+
+\noindent
+\textbullet \, Chapter \ref{chapter:fe-interface} discloses a comprehensive overview of the developed circuitry within the front-end interface. The chapter delves into various essential circuits, including the analog channel (Section \ref{chapter:fe-channel}), the addressing mechanism for the sensors (Section \ref{chapter:fe-addressing}), the necessary interface for the digital acquisition (Section \ref{chapter:fe-comms} and \ref{chapter:fe-mux}), and the power (Section \ref{chapter:fe-power}) vital to the overall system operation. Furthermore, the chapter highlights significant results pertaining to the performance of the complete system (Section \ref{chapter:fe-results}).
+
+\noindent
+\textbullet \, Chapter \ref{chapter:conclusion} closes the work performed in this dissertation, stating key outcomes and conclusions (Section \ref{section:conclusion-conclusion}) and defining the future work (Section \ref{section:conclusion-future}).
+
+% #############################################################################
+
+\clearpage
+\thispagestyle{empty}
+\cleardoublepage

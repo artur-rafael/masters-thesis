@@ -1,0 +1,257 @@
+% #############################################################################
+% ./main.tex
+% #############################################################################
+
+\documentclass[defaultstyle, 10pt, Helvetica]{istulthesis}
+
+\input{./configurations/preamble.tex}
+\input{./configurations/page_setup.tex}
+
+\begin{document}
+
+% -----------------------------------------------------------------------------
+% COVER
+
+\pdfbookmark[0]{Titlepage}{Title}
+
+\input{./structure/cover.tex}
+
+\clearpage
+\thispagestyle{empty}
+\cleardoublepage
+
+% -----------------------------------------------------------------------------
+% PAGE NUMBERING FOR INDEXING MATTER in ROMAN
+
+\setcounter{page}{1} \pagenumbering{roman}
+\baselineskip 18pt
+
+% -----------------------------------------------------------------------------
+% DECLARATION
+
+\pdfbookmark[0]{Declaration}{Declaration}
+
+\input{./structure/declaration.tex}
+
+\clearpage
+\thispagestyle{empty}
+\cleardoublepage
+% -----------------------------------------------------------------------------
+% ACKNOWLEDGEMENTS
+
+% \pdfbookmark[0]{Acknowledgments}{acknowledgments}
+\addcontentsline{toc}{section}{Acknowledgments}
+
+\thispagestyle{empty}
+\begin{acknowledgments}
+	\input{./structure/acknowledgments.tex}
+\end{acknowledgments}
+
+\clearpage
+\thispagestyle{empty}
+\cleardoublepage
+
+% -----------------------------------------------------------------------------
+% ABSTRACT
+
+% \pdfbookmark[0]{Abstract}{Abstract}
+\addcontentsline{toc}{section}{Abstract}
+
+\begin{abstract}
+	\input{./structure/abstract.tex}
+\end{abstract}
+
+\begin{keywords}
+	\input{./structure/keywords.tex}
+\end{keywords}
+
+\clearpage
+\thispagestyle{empty}
+\cleardoublepage
+
+% -----------------------------------------------------------------------------
+% RESUMO
+
+% \pdfbookmark[0]{Resumo}{Resumo}
+\addcontentsline{toc}{section}{Resumo}
+
+\begin{resumo}
+	\input{./structure/resumo.tex}
+\end{resumo}
+
+\begin{palavraschave}
+	\input{./structure/palavras_chave.tex}
+\end{palavraschave}
+
+\clearpage
+\thispagestyle{empty}
+\cleardoublepage
+
+% -----------------------------------------------------------------------------
+% This is required for the Fancy Chapters with minitoc
+
+\dominitoc
+\dominilof
+% \dominilot
+
+% -----------------------------------------------------------------------------
+% Lists of Contents
+\renewcommand{\baselinestretch}{1}
+%\pdfbookmark[0]{List of Contents}{toc}
+
+% Change the name from "Contents" to "List of Contents"
+\renewcommand{\contentsname}{List of Contents}
+
+\tableofcontents
+
+% \contentsline{chapter}{Bibliography}{\pageref{bib}}
+
+\clearpage
+\thispagestyle{empty}
+\cleardoublepage
+
+\renewcommand{\baselinestretch}{1.5}
+% -----------------------------------------------------------------------------
+% LIST OF FIGURES
+
+%\pdfbookmark[1]{List of Figures}{lof}
+\addcontentsline{toc}{section}{List of Figures}
+
+\listoffigures
+
+\clearpage
+\thispagestyle{empty}
+\cleardoublepage
+% -----------------------------------------------------------------------------
+\begingroup
+    \let\clearpage\relax
+    \let\cleardoublepage\relax
+    \let\cleardoublepage\relax
+    
+% LIST OF TABLES
+
+%\pdfbookmark[1]{List of Tables}{lot}
+\addcontentsline{toc}{section}{List of Tables}
+
+\listoftables
+
+% \let\cleardoublepage\relax
+
+% \clearpage
+% \thispagestyle{empty}
+% \cleardoublepage
+
+% -----------------------------------------------------------------------------
+% LIST OF ALGORITHMS
+
+% \pdfbookmark[1]{List of Algorithms}{loa}
+
+% \listofalgorithms
+
+\clearpage
+\thispagestyle{empty}
+\cleardoublepage
+
+% -----------------------------------------------------------------------------
+% LISTINGS
+
+% \pdfbookmark[1]{Listings}{lol}
+% 
+% \listoflistings
+
+% \clearpage
+% \thispagestyle{empty}
+% \cleardoublepage
+
+\endgroup
+
+% -----------------------------------------------------------------------------
+% ACRONYMS
+
+% \pdfbookmark[1]{List of Acronyms}{loac}
+\addcontentsline{toc}{section}{List of Acronyms}
+
+\chapter*{\tlangAcronyms}
+
+% Fix the header "List of Figures" and "Chapter 0. List of Acronyms"
+\markboth{List of Acronyms}{List of Acronyms}
+
+\input{./structure/acronyms.tex}
+
+\clearpage
+\thispagestyle{empty}
+\cleardoublepage
+
+% -----------------------------------------------------------------------------
+
+\setcounter{page}{1} \pagenumbering{arabic}
+\baselineskip 18pt
+
+% -----------------------------------------------------------------------------
+% CHAPTERS
+
+\acresetall
+
+\pagestyle{document}
+
+% Chapter 1 - Introduction
+\input{./chapters/1_introduction.tex}
+\cleardoublepage
+
+% Chapter 2 - State of the Art
+\input{./chapters/2_state_of_the_art.tex}
+\cleardoublepage
+
+% Chapter 3 - Magnetic Flow Cytometer
+\input{./chapters/3_magnetic_flow_cytometer.tex}
+\cleardoublepage
+
+\input{./chapters/4_frontend_interface.tex}
+\cleardoublepage
+
+% Chapter 5 - Conclusion
+\input{./chapters/5_conclusion.tex}
+\cleardoublepage
+
+% -----------------------------------------------------------------------------
+% BIBLIOGRAPHY
+
+% \pdfbookmark[0]{Bibliography}{bib}
+\addcontentsline{toc}{chapter}{Bibliography}
+
+\bibliographystyle{IEEEtran}
+
+\normalem
+\bibliography{./structure/bibliography}
+
+\ULforem
+\thispagestyle{empty}
+\cleardoublepage
+\thispagestyle{empty}
+
+% -----------------------------------------------------------------------------
+
+% -----------------------------------------------------------------------------
+% APPENDIXES
+
+\setcounter{page}{1} \pagenumbering{arabic}
+\renewcommand*{\thepage}{A-\arabic{page}}
+
+\appendix
+
+% Appendix A - Circuit Schematics
+% \pdfbookmark[0]{Appendix A}{appendix}
+\input{./appendixes/a_schematics.tex}
+\cleardoublepage
+
+\setcounter{page}{1}
+\renewcommand*{\thepage}{B-\arabic{page}}
+
+% Appendix B - Microfluidics Internship
+% \pdfbookmark[0]{Appendix A}{appendix}
+\input{./appendixes/b_microfluidics.tex}
+\cleardoublepage
+
+% -----------------------------------------------------------------------------
+
+\end{document}
