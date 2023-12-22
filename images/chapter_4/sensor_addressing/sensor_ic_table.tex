@@ -1,0 +1,14 @@
+\begin{tabular}{ccccccccc}
+\toprule
+\multirow{2}{*}{IC} & \multirow{2}{*}{Ron $\mathrm{[\Omega]}$} & \multicolumn{2}{c}{Configuration} & \multicolumn{2}{c}{Supply $\mathrm{[V]}$} & \multicolumn{3}{c}{Comm. Protocol} \\
+\cmidrule(r){3-4} \cmidrule(r){5-6} \cmidrule(r){7-9}
+                    &                                 & 4:1             & 8:8             & Single        & Double ($\pm$)           & I2C       & SPI       & Bits       \\
+\midrule
+ADG1609             & 4.5                             & x               &                 & 3.3 -- 16      & 3.3 --  8    &           &           & x          \\
+MAX4639             & 3                               & x               &                 & 1.8 -- 5       &  2.5        &           &           & x          \\
+ADG739              & 2.5                             & x               &                 & 2.7 -- 5.5     &                  &           & x         &            \\
+ADG71(4/5)          & 2.5                             &                 & x               & 2.7 -- 5.5     & 2.5        & x         & x         &            \\
+ADGS1414D           & 1.5                             &                 & x               & 12             & 5 -- 15     &           & x         &            \\
+MAX14662            & 0.5                            &                 & x               & 1.6 -- 5.5     & 5.5        & x         & x         & x          \\
+\bottomrule 
+\end{tabular}
